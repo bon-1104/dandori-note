@@ -633,14 +633,53 @@ button {
   }
 
   .hero h1 {
-    font-size: clamp(2rem, 10vw, 3rem);
-    line-height: 1.04;
+    font-size: clamp(1.45rem, 7vw, 1.9rem);
+    line-height: 1.12;
+    max-width: 9ch;
   }
 
   .hero__lead {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-top: 12px;
+    display: none;
+  }
+
+  .hero {
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .hero__text {
+    padding: 16px;
+  }
+
+  .hero__panel {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .eyebrow {
+    margin-bottom: 6px;
+    font-size: 0.64rem;
+  }
+
+  .hero__text .eyebrow {
+    letter-spacing: 0.12em;
+  }
+
+  .utility-box,
+  .backup-box {
+    padding: 12px;
+  }
+
+  .status-row strong,
+  .backup-box strong {
+    font-size: 0.96rem;
+  }
+
+  .panel-note,
+  .backup-box .panel-note,
+  .utility-box .panel-note {
+    font-size: 0.88rem;
+    line-height: 1.55;
   }
 
   .dashboard {
