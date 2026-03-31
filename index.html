@@ -10,7 +10,7 @@
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./assets/icon.svg">
-  <link rel="stylesheet" href="./styles.css?v=20260331m3">
+  <link rel="stylesheet" href="./styles.css?v=20260331m5">
   <title>段取りノート</title>
 </head>
 <body>
@@ -25,40 +25,6 @@
         <p class="hero__lead">
           予定ごとに準備期限を手入力でひも付けて、画像やPDFも一緒に残せる一人用の段取りアプリです。
         </p>
-      </div>
-
-      <div class="hero__panel">
-        <div class="utility-box">
-          <div class="status-row">
-            <span id="connectivity-dot" class="status-dot"></span>
-            <strong id="connectivity-label">接続状態を確認中です。</strong>
-          </div>
-          <p id="offline-note" class="panel-note">
-            最初に一度開けば、その後はオフラインでも予定の確認と更新ができます。
-          </p>
-        </div>
-
-        <div class="hero__actions">
-          <button id="notification-button" class="button button--primary" type="button">通知を有効にする</button>
-          <button id="install-button" class="button button--ghost is-hidden" type="button">ホーム画面に追加</button>
-        </div>
-        <p id="notification-status" class="panel-note">通知権限の状態を確認中です。</p>
-        <p id="install-hint" class="panel-note">
-          iPhoneではSafariの共有メニューから「ホーム画面に追加」でアプリ風に使えます。
-        </p>
-
-        <div class="backup-box">
-          <div>
-            <p class="eyebrow">Backup</p>
-            <strong>バックアップと復元</strong>
-            <p class="panel-note">機種変更やSafariのデータ削除に備えて、予定と添付をまとめて保存できます。</p>
-          </div>
-          <div class="hero__actions">
-            <button id="backup-button" class="button button--line" type="button">バックアップ保存</button>
-            <button id="restore-button" class="button button--line" type="button">バックアップ復元</button>
-          </div>
-          <input id="restore-input" class="is-hidden" type="file" accept="application/json">
-        </div>
       </div>
     </section>
 
@@ -147,6 +113,52 @@
 
         <div id="events-list" class="events-list"></div>
       </section>
+    </section>
+
+    <section class="panel panel--settings">
+      <div class="panel__header">
+        <div>
+          <p class="eyebrow">Settings</p>
+          <h2>通知とバックアップ</h2>
+        </div>
+        <p class="panel-note">必要なときだけ使う設定を下にまとめています。</p>
+      </div>
+
+      <div class="settings-grid">
+        <div class="utility-box">
+          <div class="status-row">
+            <span id="connectivity-dot" class="status-dot"></span>
+            <strong id="connectivity-label">接続状態を確認中です。</strong>
+          </div>
+          <p id="offline-note" class="panel-note">
+            最初に一度開けば、その後はオフラインでも予定の確認と更新ができます。
+          </p>
+        </div>
+
+        <div class="utility-box">
+          <div class="hero__actions">
+            <button id="notification-button" class="button button--primary" type="button">通知を有効にする</button>
+            <button id="install-button" class="button button--ghost is-hidden" type="button">ホーム画面に追加</button>
+          </div>
+          <p id="notification-status" class="panel-note">通知権限の状態を確認中です。</p>
+          <p id="install-hint" class="panel-note">
+            iPhoneではSafariの共有メニューから「ホーム画面に追加」でアプリ風に使えます。
+          </p>
+        </div>
+
+        <div class="backup-box">
+          <div>
+            <p class="eyebrow">Backup</p>
+            <strong>バックアップと復元</strong>
+            <p class="panel-note">機種変更やSafariのデータ削除に備えて、予定と添付をまとめて保存できます。</p>
+          </div>
+          <div class="hero__actions">
+            <button id="backup-button" class="button button--line" type="button">バックアップ保存</button>
+            <button id="restore-button" class="button button--line" type="button">バックアップ復元</button>
+          </div>
+          <input id="restore-input" class="is-hidden" type="file" accept="application/json">
+        </div>
+      </div>
     </section>
   </main>
 
