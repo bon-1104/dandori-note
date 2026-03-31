@@ -78,47 +78,52 @@
     </section>
 
     <section class="layout-grid">
-      <section class="panel panel--form">
-        <div class="panel__header">
+      <section id="event-form-section" class="panel panel--form">
+        <div class="panel__header panel__header--spread">
           <div>
             <p class="eyebrow">New Event</p>
             <h2>予定を追加</h2>
           </div>
           <p class="panel-note">まず予定を作ってから、その中に準備期限を複数追加できます。</p>
+          <button id="form-toggle" class="button button--ghost button--small panel-toggle" type="button" aria-expanded="true">
+            フォームをたたむ
+          </button>
         </div>
 
-        <form id="event-form" class="stack-form">
-          <label class="field">
-            <span>予定名</span>
-            <input name="title" type="text" placeholder="例: 訪問看護の面談" required>
-          </label>
+        <div id="form-panel-body">
+          <form id="event-form" class="stack-form">
+            <label class="field">
+              <span>予定名</span>
+              <input name="title" type="text" placeholder="例: 訪問看護の面談" required>
+            </label>
 
-          <label class="field">
-            <span>予定日時</span>
-            <input name="scheduledAt" type="datetime-local" required>
-          </label>
+            <label class="field">
+              <span>予定日時</span>
+              <input name="scheduledAt" type="datetime-local" required>
+            </label>
 
-          <label class="field">
-            <span>場所</span>
-            <input name="location" type="text" placeholder="例: ○○クリニック">
-          </label>
+            <label class="field">
+              <span>場所</span>
+              <input name="location" type="text" placeholder="例: ○○クリニック">
+            </label>
 
-          <label class="field">
-            <span>メモ</span>
-            <textarea name="note" rows="4" placeholder="持ち物、相手、注意点など"></textarea>
-          </label>
+            <label class="field">
+              <span>メモ</span>
+              <textarea name="note" rows="4" placeholder="持ち物、相手、注意点など"></textarea>
+            </label>
 
-          <label class="field">
-            <span>添付ファイル</span>
-            <input name="attachments" type="file" accept="image/*,application/pdf" multiple>
-            <small>jpg / png / pdf に対応。画像はサムネイル表示、PDFはプレビュー付きカードで残します。</small>
-          </label>
+            <label class="field">
+              <span>添付ファイル</span>
+              <input name="attachments" type="file" accept="image/*,application/pdf" multiple>
+              <small>jpg / png / pdf に対応。画像はサムネイル表示、PDFはプレビュー付きカードで残します。</small>
+            </label>
 
-          <button class="button button--primary" type="submit">予定を保存する</button>
-        </form>
+            <button class="button button--primary" type="submit">予定を保存する</button>
+          </form>
+        </div>
       </section>
 
-      <section class="panel panel--list">
+      <section id="events-section" class="panel panel--list">
         <div class="panel__header panel__header--spread">
           <div>
             <p class="eyebrow">Timeline</p>

@@ -16,6 +16,9 @@ const elements = {
   eventsList: document.querySelector("#events-list"),
   eventsEmpty: document.querySelector("#events-empty"),
   statusFilter: document.querySelector("#status-filter"),
+  eventFormSection: document.querySelector("#event-form-section"),
+  formPanelBody: document.querySelector("#form-panel-body"),
+  formToggle: document.querySelector("#form-toggle"),
   backupButton: document.querySelector("#backup-button"),
   restoreButton: document.querySelector("#restore-button"),
   restoreInput: document.querySelector("#restore-input"),
@@ -33,6 +36,7 @@ const elements = {
 };
 
 let attachmentDbPromise = null;
+let formCollapsed = false;
 
 document.addEventListener("DOMContentLoaded", () => {
   initializeApp().catch((error) => {
@@ -53,6 +57,10 @@ async function initializeApp() {
 
   elements.notificationButton.addEventListener("click", async () => {
     await requestNotificationPermission();
+  });
+
+  elements.formToggle.addEventListener("click", () => {
+    setFormCollapsed(!formCollapsed);
   });
 
   elements.backupButton.addEventListener("click", async () => {
@@ -109,11 +117,18 @@ async function initializeApp() {
   updateNotificationUi();
   updateInstallUi();
   updateConnectivityUi();
+  setFormCollapsed(window.innerWidth <= 640);
   await renderApp();
   await scanDueReminders();
   window.setInterval(() => {
     void scanDueReminders();
   }, 60000);
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 640 && formCollapsed) {
+      setFormCollapsed(false);
+    }
+  });
 }
 
 function loadEvents() {
@@ -611,6 +626,10 @@ async function handleCreateEvent(event) {
   saveEvents();
   event.currentTarget.reset();
   await renderApp();
+  if (window.innerWidth <= 640) {
+    setFormCollapsed(true);
+    document.querySelector("#events-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
   showToast("予定を保存しました。次は準備期限を追加できます。");
 }
 
@@ -954,6 +973,13 @@ function updateConnectivityUi() {
   }
 
   elements.offlineNote.textContent = "最初に一度開けば、その後はオフラインでも予定の確認と更新ができます。";
+}
+
+function setFormCollapsed(collapsed) {
+  formCollapsed = collapsed;
+  elements.eventFormSection.classList.toggle("is-collapsed", collapsed);
+  elements.formToggle.textContent = collapsed ? "フォームを開く" : "フォームをたたむ";
+  elements.formToggle.setAttribute("aria-expanded", String(!collapsed));
 }
 
 async function scanDueReminders() {
