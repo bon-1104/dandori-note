@@ -1,0 +1,23 @@
+{
+  "name": "段取りノート",
+  "short_name": "段取りノート",
+  "description": "予定ごとに準備期限をひも付けて、画像やPDFも一緒に管理できる一人用アプリです。",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5efe6",
+  "theme_color": "#143b36",
+  "icons": [
+    {
+      "src": "./assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
