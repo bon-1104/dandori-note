@@ -617,7 +617,7 @@ button {
 @media (max-width: 640px) {
   .app-shell {
     width: min(100% - 20px, 1180px);
-    padding: 18px 0 40px;
+    padding: 12px 0 32px;
   }
 
   .hero__text,
@@ -633,9 +633,9 @@ button {
   }
 
   .hero h1 {
-    font-size: clamp(1.45rem, 7vw, 1.9rem);
-    line-height: 1.12;
-    max-width: 9ch;
+    font-size: 1.05rem;
+    line-height: 1.24;
+    max-width: none;
   }
 
   .hero__lead {
@@ -643,22 +643,22 @@ button {
   }
 
   .hero {
-    gap: 12px;
-    margin-bottom: 14px;
+    gap: 8px;
+    margin-bottom: 10px;
   }
 
   .hero__text {
-    padding: 16px;
+    padding: 12px 14px;
   }
 
   .hero__panel {
-    padding: 16px;
-    gap: 12px;
+    padding: 12px 14px;
+    gap: 10px;
   }
 
   .eyebrow {
-    margin-bottom: 6px;
-    font-size: 0.64rem;
+    margin-bottom: 4px;
+    font-size: 0.58rem;
   }
 
   .hero__text .eyebrow {
@@ -667,37 +667,55 @@ button {
 
   .utility-box,
   .backup-box {
-    padding: 12px;
+    padding: 10px 12px;
   }
 
   .status-row strong,
   .backup-box strong {
-    font-size: 0.96rem;
+    font-size: 0.88rem;
   }
 
   .panel-note,
   .backup-box .panel-note,
   .utility-box .panel-note {
-    font-size: 0.88rem;
-    line-height: 1.55;
+    font-size: 0.8rem;
+    line-height: 1.45;
+  }
+
+  .status-row {
+    gap: 8px;
+  }
+
+  .status-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .hero__actions {
+    gap: 8px;
+  }
+
+  .hero__panel .button {
+    padding: 10px 14px;
+    font-size: 0.92rem;
   }
 
   .dashboard {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
+    gap: 8px;
   }
 
   .summary-card {
-    padding: 14px;
+    padding: 12px;
   }
 
   .summary-card__label {
-    margin-bottom: 6px;
-    font-size: 0.82rem;
+    margin-bottom: 4px;
+    font-size: 0.74rem;
   }
 
   .summary-card__value {
-    font-size: 1.9rem;
+    font-size: 1.55rem;
   }
 
   .event-card {
